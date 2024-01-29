@@ -20,7 +20,6 @@ pub fn prime_factorization(number: usize) -> Vec<(usize, usize)> {
     let mut len = 0;
 
     while i * i <= num {
-
         if num % i == 0 {
             result.push((i, 0));
             len = result.len() - 1;
@@ -33,11 +32,11 @@ pub fn prime_factorization(number: usize) -> Vec<(usize, usize)> {
 
         i += 1;
     }
-    
+
     if num > 1 {
-        result.push((num,1));
+        result.push((num, 1));
     }
-    
+
     result
 }
 #[cfg(test)]
@@ -59,18 +58,18 @@ mod tests {
     #[test]
 
     fn prime_factors() {
-        let numbers: Vec<usize> = vec![1,2,3,4,5,6,7,8,9,10,10478678];
-        let answers: Vec<Vec<(usize,usize)>> = vec![
+        let numbers: Vec<usize> = vec![1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 10478678];
+        let answers: Vec<Vec<(usize, usize)>> = vec![
             vec![],
-            vec![(2,1)],
-            vec![(3,1)],
-            vec![(2,2)],
-            vec![(5,1)],
-            vec![(2,1),(3,1)],
-            vec![(7,1)],
-            vec![(2,3)],
-            vec![(3,2)],
-            vec![(2,1),(5,1)],
+            vec![(2, 1)],
+            vec![(3, 1)],
+            vec![(2, 2)],
+            vec![(5, 1)],
+            vec![(2, 1), (3, 1)],
+            vec![(7, 1)],
+            vec![(2, 3)],
+            vec![(3, 2)],
+            vec![(2, 1), (5, 1)],
             vec![(2, 1), (7, 1), (337, 1), (2221, 1)],
         ];
 
