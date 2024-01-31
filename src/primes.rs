@@ -9,7 +9,7 @@ pub fn is_prime(number: usize) -> bool {
 
     (2..=limit)
         .map(|i| number % i == 0)
-        .any(|&divisable| divisable == true)
+        .any(|divisable| divisable == true)
 }
 
 pub fn prime_factorization(number: usize) -> Vec<(usize, usize)> {
