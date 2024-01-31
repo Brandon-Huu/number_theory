@@ -1,19 +1,15 @@
 #![allow(unused)]
 
 pub fn is_prime(number: usize) -> bool {
-    let limit = (number as f64).sqrt() as usize;
-
     if number == 1 {
         return false;
     }
+    
+    let limit = (number as f64).sqrt() as usize;
 
-    for i in 2..=limit {
-        if number % i == 0 {
-            return false;
-        }
-    }
-
-    return true;
+    (2..=limit)
+        .map(|i| number % i == 0)
+        .any(|&divisable| divisable == true)
 }
 
 pub fn prime_factorization(number: usize) -> Vec<(usize, usize)> {
