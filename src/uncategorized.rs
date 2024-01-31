@@ -22,25 +22,36 @@ struct Matrix {
 }
 
 impl Matrix {
-    pub fn get(&self, row:usize, col: usize) -> Option<usize> {
-        if row >= self.rows { return None; }
-        if col >= self.cols { return None; }
+    pub fn get(&self, row: usize, col: usize) -> Option<usize> {
+        if row >= self.rows {
+            return None;
+        }
+        if col >= self.cols {
+            return None;
+        }
 
         Some(self.data[self.cols * col + row])
     }
     pub fn multiply(&self, other: &Self) -> Option<Self> {
-        if self.cols != other.rows { return None; }
-        if self.data.len() != self.cols * self.rows || other.data.len() != other.cols * other.rows { return None; }
+        if self.cols != other.rows {
+            return None;
+        }
+        if self.data.len() != self.cols * self.rows || other.data.len() != other.cols * other.rows {
+            return None;
+        }
 
-        let mut matrix = Matrix { rows: self.rows, cols: other.cols, data: vec![0,self.rows * other.cols]};
+        let mut matrix = Matrix {
+            rows: self.rows,
+            cols: other.cols,
+            data: vec![0, self.rows * other.cols],
+        };
 
         !unimplemented!()
-
     }
 }
 
 pub fn factorial_log_n(number: usize) -> usize {
-   !unimplemented!() 
+    !unimplemented!()
 }
 
 pub fn binary_exponentiation_modulo(base: usize, exponent: usize, modulo: usize) -> usize {
